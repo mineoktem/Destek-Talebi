@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DestekTaleplerim.MvcWebUI.Entity.IslemYapan2
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="pt-5">Kullanıcı Listesi</h2>
+<hr />
+
+<p>
+    @Html.ActionLink("Yeni kullanıcı ekle", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipi)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>*@
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>*@
+
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" }) |
+            @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-info btn-sm" }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+        </td>
+    </tr>
+    }
+
+</table>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1831
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DestekTaleplerim.MvcWebUI", "DestekTaleplerim.MvcWebUI\DestekTaleplerim.MvcWebUI.csproj", "{596A1AE2-CDCA-4BE1-82BC-7956233DD9B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{596A1AE2-CDCA-4BE1-82BC-7956233DD9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596A1AE2-CDCA-4BE1-82BC-7956233DD9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596A1AE2-CDCA-4BE1-82BC-7956233DD9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596A1AE2-CDCA-4BE1-82BC-7956233DD9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {523035B7-796C-46E3-9087-43F31A016A76}
+	EndGlobalSection
+EndGlobal

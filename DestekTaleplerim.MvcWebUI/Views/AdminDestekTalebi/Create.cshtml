@@ -1,0 +1,110 @@
+﻿@model DestekTaleplerim.MvcWebUI.Entity.DestekTalebi
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container pb-5 pt-5">
+    <h2>Yeni Talep Oluştur</h2>
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IslemYapan, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.IslemYapan, new { disabled = "disabled", @Value = User.Identity.Name })
+
+                    @Html.ValidationMessageFor(model => model.IslemYapan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.IslemYapan, new { @readonly = "readonly", @hidden = "true", @Value = User.Identity.Name })
+
+                    @Html.ValidationMessageFor(model => model.IslemYapan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TalepNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TalepNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TalepNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Konu, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Konu, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Konu, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Mesajlar.Icerik, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Mesajlar.Icerik, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Mesajlar.Icerik, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Durum, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Durum, new { disabled = "disabled", @Value = DestekTaleplerim.MvcWebUI.Entity.EnumDurum.Yeni })
+
+                    @Html.ValidationMessageFor(model => model.Durum, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+              
+                <div class="col-md-10">
+                    @Html.DropDownList("MesajlarId", null, htmlAttributes: new { @class = "form-control" , @hidden = "true" })
+                    @Html.ValidationMessageFor(model => model.MesajlarId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Oncelik, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Oncelik, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Oncelik, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Kaydet" class="btn btn-primary" />
+
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Listeye dön", "Index")
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

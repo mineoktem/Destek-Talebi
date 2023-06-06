@@ -1,0 +1,42 @@
+﻿@model DestekTaleplerim.MvcWebUI.Entity.Mesajlar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mesajlar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DestekTalebi.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestekTalebi.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,77 @@
+﻿@model DestekTaleplerim.MvcWebUI.Entity.DestekTalebi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
+}
+
+<div class="container pb-5 pt-5">
+    <h2>Mesaj Detayı</h2>
+    <hr />
+
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Mesajlar.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Mesajlar.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TalepNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TalepNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Konu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Konu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Durum)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Durum)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IslemYapan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IslemYapan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Oncelik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Oncelik)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Düzenle/Güncelle", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning btn-sm" }) |
+        @Html.ActionLink("Listeye Dön", "Index")
+    </p>
+</div>
